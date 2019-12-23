@@ -1,5 +1,5 @@
 // Import the ORM to create functions that will interact with the database.
-var orm = require("../config/orm.js");
+var orm = require("./../config/orm");
 
 var burger = {
   all: function(cb) {
@@ -15,6 +15,11 @@ var burger = {
   },
   update: function(objColVals, condition, cb) {
     orm.update("burgers", objColVals, condition, function(res) {
+      cb(res);
+    });
+  },
+  delete: function(condition, cb) {
+    orm.delete("burgers", condition, function(res) {
       cb(res);
     });
   }

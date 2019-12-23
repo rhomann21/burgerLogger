@@ -1,17 +1,12 @@
--- Drops the day_planner_db if it already exists --
-DROP DATABASE IF EXISTS burgers_db;
+### Schema
 
--- Create the database day_planner_db and specified it for use.
-CREATE DATABASE burgers_db;
+CREATE DATABASE burger_db;
+USE burger_db;
 
-USE burgers_db;
-
--- Create the table plans.
-CREATE TABLE burgers (
-  id int NOT NULL AUTO_INCREMENT,
+CREATE TABLE burgers
+(
+	id int NOT NULL AUTO_INCREMENT,
 	name varchar(255) NOT NULL,
-	eaten BOOLEAN DEFAULT false,
-  PRIMARY KEY (id)
+	devoured BOOLEAN DEFAULT false,
+	PRIMARY KEY (id)
 );
-
-
